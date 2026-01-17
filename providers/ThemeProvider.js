@@ -35,8 +35,6 @@ export function ThemeProvider({ children }) {
         }
     };
 
-    // Prevent hydration mismatch by rendering children without theme specific logic until mounted
-    // logic allows initial render to match server (light default) then switch.
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>

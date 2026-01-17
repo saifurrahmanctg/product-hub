@@ -42,7 +42,7 @@ export default function Sidebar() {
             text: "You will be logged out of your session.",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#ef4444', // Red-500
+            confirmButtonColor: '#ef4444',
             cancelButtonColor: '#3085d6',
             confirmButtonText: 'Yes, Sign Out'
         }).then((result) => {

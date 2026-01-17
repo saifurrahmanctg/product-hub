@@ -29,7 +29,7 @@ export default function ProfilePage() {
                 const res = await fetch('/api/products');
                 if (res.ok) {
                     const data = await res.json();
-                    setListings(data.slice(0, 4)); // Show recent listings
+                    setListings(data.slice(0, 4));
                 }
             } catch (error) {
                 console.error('Failed to fetch listings:', error);

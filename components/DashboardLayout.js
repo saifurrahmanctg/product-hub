@@ -26,13 +26,10 @@ export default function DashboardLayout({ children }) {
         `}
             >
                 <div className="h-full relative flex flex-col">
-                    {/* Pass a close handler to Sidebar logic if needed, but for now just wrapping it */}
                     <div className="flex-1 overflow-y-auto" onClick={(e) => {
-                        // If user clicks a link (which bubbles up), close sidebar on mobile
                         if (window.innerWidth < 1024) {
-                            // Optional: check if target is a link. 
-                            // For simplicity, just close on any click might be annoying if clicking non-links.
-                            // So we rely on the user clicking links.
+                            setIsSidebarOpen(false);
+
                             setIsSidebarOpen(false);
                         }
                     }}>

@@ -75,7 +75,6 @@ export default function CartPage() {
                 }
             });
 
-            // Simulate API call to save order
             try {
                 const orderData = {
                     items: cart,
@@ -83,7 +82,7 @@ export default function CartPage() {
                     total: total,
                     status: 'Processing',
                     createdAt: new Date(),
-                    userEmail: 'user@example.com' // Should ideally come from auth
+                    userEmail: 'user@example.com'
                 };
 
                 const res = await fetch('/api/orders', {

@@ -18,12 +18,10 @@ export async function POST(request) {
 
         const data = await request.json();
 
-        // Basic validation
         if (!data.name || !data.price) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        // Add timestamps and default status
         const newItem = {
             ...data,
             price: parseFloat(data.price),

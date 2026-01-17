@@ -27,12 +27,10 @@ export default function LoginPage() {
             };
 
             if (email === demoUser.email && password === demoUser.password) {
-                // Set cookies
                 Cookies.set('authToken', 'mock_token_' + Date.now(), { expires: 7 });
                 Cookies.set('userEmail', demoUser.email, { expires: 7 });
                 Cookies.set('userName', demoUser.name, { expires: 7 });
 
-                // Success Alert
                 Swal.fire({
                     title: 'Welcome Back!',
                     text: `Logged in as ${demoUser.email}`,
@@ -93,7 +91,6 @@ export default function LoginPage() {
 
                     {/* Login Form */}
                     <form className="space-y-4" onSubmit={handleLogin}>
-                        {/* Email Field */}
                         <div className="flex flex-col gap-2">
                             <label className="text-[#0d121b] dark:text-gray-200 text-sm font-semibold leading-normal">Email Address</label>
                             <div className="relative">
@@ -108,7 +105,6 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        {/* Password Field */}
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center">
                                 <label className="text-[#0d121b] dark:text-gray-200 text-sm font-semibold leading-normal">Password</label>
@@ -133,7 +129,6 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        {/* Primary Login Button */}
                         <button
                             className="w-full flex items-center justify-center rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
                             type="submit"

@@ -21,7 +21,6 @@ export default function OrderHistoryPage() {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                // In a real app, we'd pass the user's email from session/cookies
                 const res = await fetch('/api/orders');
                 if (res.ok) {
                     const data = await res.json();

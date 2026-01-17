@@ -7,7 +7,7 @@ export default function ThemeToggle() {
     const { theme, toggleTheme, mounted } = useTheme();
 
     if (!mounted) return (
-        <div className="size-9 p-2"></div> // Placeholder to avoid layout shift
+        <div className="size-9 p-2"></div>
     );
 
     return (

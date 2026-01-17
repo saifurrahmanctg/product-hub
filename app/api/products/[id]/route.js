@@ -40,7 +40,6 @@ export async function PUT(request, { params }) {
 
         const data = await request.json();
 
-        // Remove _id from data to avoid conflict during update
         const { _id, id: removedId, ...updateData } = data;
 
         let query = {};

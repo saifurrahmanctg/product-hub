@@ -176,7 +176,6 @@ export default function MyListingsPage() {
             </header>
 
             <div className="p-4 md:p-8 w-full">
-                {/* PageHeading */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 md:mb-8">
                     <div>
                         <p className="text-[#0d121b] dark:text-white text-2xl md:text-3xl font-black leading-tight tracking-tight">My Listings</p>
@@ -196,7 +195,6 @@ export default function MyListingsPage() {
 
                 {/* Stats Grid - Responsive cols */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-                    {/* Stat 1 */}
                     <div className="flex flex-col gap-2 rounded-xl p-6 border border-[#cfd7e7] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
                         <div className="flex justify-between items-start">
                             <p className="text-[#4c669a] dark:text-gray-400 text-sm font-semibold uppercase tracking-wider">Active Items</p>
@@ -208,7 +206,6 @@ export default function MyListingsPage() {
                             </p>
                         </div>
                     </div>
-                    {/* Stat 2 */}
                     <div className="flex flex-col gap-2 rounded-xl p-6 border border-[#cfd7e7] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
                         <div className="flex justify-between items-start">
                             <p className="text-[#4c669a] dark:text-gray-400 text-sm font-semibold uppercase tracking-wider">Pending Items</p>
@@ -220,7 +217,6 @@ export default function MyListingsPage() {
                             </p>
                         </div>
                     </div>
-                    {/* Stat 3 */}
                     <div className="flex flex-col gap-2 rounded-xl p-6 border border-[#cfd7e7] dark:border-gray-800 bg-white dark:bg-background-dark shadow-sm">
                         <div className="flex justify-between items-start">
                             <p className="text-[#4c669a] dark:text-gray-400 text-sm font-semibold uppercase tracking-wider">Sold Items</p>

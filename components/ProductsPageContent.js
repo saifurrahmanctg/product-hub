@@ -139,7 +139,6 @@ export default function ProductsPageContent({ initialProducts }) {
     });
 
     const applyPriceFilter = () => {
-        // Just triggers re-render
         setSearchQuery(searchQuery);
     };
 
@@ -177,7 +176,7 @@ export default function ProductsPageContent({ initialProducts }) {
                                         key={category.name}
                                         onClick={() => {
                                             setSelectedCategory(category.name);
-                                            setIsFilterOpen(false); // Close mobile menu on selection
+                                            setIsFilterOpen(false);
                                         }}
                                         className={`flex items-center justify-between gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors ${isActive
                                             ? 'bg-primary/10 text-primary'

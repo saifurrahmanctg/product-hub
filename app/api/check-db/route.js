@@ -6,7 +6,6 @@ export async function GET() {
         const db = await getDatabase();
         const collection = db.collection(process.env.DB_COLLECTION || 'products');
 
-        // Get collection stats
         const count = await collection.countDocuments();
         const sampleData = await collection.find({}).limit(5).toArray();
         const dbName = db.databaseName;

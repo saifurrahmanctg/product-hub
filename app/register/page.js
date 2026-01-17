@@ -69,7 +69,6 @@ export default function RegisterPage() {
 
                     {/* Register Form */}
                     <form className="space-y-4" onSubmit={handleRegister}>
-                        {/* Name Field */}
                         <div className="flex flex-col gap-2">
                             <label className="text-[#0d121b] dark:text-gray-200 text-sm font-semibold leading-normal">Full Name</label>
                             <input
@@ -82,7 +81,6 @@ export default function RegisterPage() {
                             />
                         </div>
 
-                        {/* Email Field */}
                         <div className="flex flex-col gap-2">
                             <label className="text-[#0d121b] dark:text-gray-200 text-sm font-semibold leading-normal">Email Address</label>
                             <input
@@ -95,7 +93,6 @@ export default function RegisterPage() {
                             />
                         </div>
 
-                        {/* Password Field */}
                         <div className="flex flex-col gap-2">
                             <label className="text-[#0d121b] dark:text-gray-200 text-sm font-semibold leading-normal">Password</label>
                             <div className="relative">
@@ -118,7 +115,6 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
-                        {/* Submit Button */}
                         <button
                             className="w-full flex items-center justify-center rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
                             type="submit"
@@ -128,7 +124,6 @@ export default function RegisterPage() {
                         </button>
                     </form>
 
-                    {/* Footer Link */}
                     <p className="text-center mt-6 text-sm text-[#4c669a] dark:text-gray-400">
                         Already have an account? <Link className="text-primary font-bold hover:underline" href="/login">Log In</Link>
                     </p>

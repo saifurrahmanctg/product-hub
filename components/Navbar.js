@@ -23,7 +23,6 @@ export default function Navbar() {
         };
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
-        // Custom event for same-window updates
         window.addEventListener('cartUpdated', updateCartCount);
         return () => {
             window.removeEventListener('storage', updateCartCount);

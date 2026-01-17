@@ -8,8 +8,6 @@ export async function GET(request) {
 
         const db = await getDatabase();
         const query = email ? { userEmail: email } : {};
-        // If email provided, fetch user orders. Else fetch all (admin?) or just empty?
-        // For now, let's allow fetching by email.
 
         const orders = await db.collection('orders').find(query).toArray();
         return NextResponse.json(orders, { status: 200 });

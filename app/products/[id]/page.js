@@ -18,14 +18,12 @@ async function getProduct(id) {
         if (ObjectId.isValid(id)) {
             query = { _id: new ObjectId(id) };
         } else {
-            // Fallback for numeric IDs if they exist in the DB
             query = { $or: [{ id: id }, { id: parseInt(id) }] };
         }
 
         const product = await collection.findOne(query);
         if (!product) return null;
 
-        // Normalize
         return {
             ...product,
             id: String(product._id),
