@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import { FaEye, FaEyeSlash, FaInfoCircle, FaGoogle, FaCube } from 'react-icons/fa';
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 
 export default function LoginPage() {
     const router = useRouter();
+    const searchParams = useSearchParams();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -38,7 +39,8 @@ export default function LoginPage() {
                     timer: 1500,
                     showConfirmButton: false
                 }).then(() => {
-                    router.push('/products');
+                    const callbackUrl = searchParams.get('callbackUrl');
+                    router.push(callbackUrl || '/products');
                 });
             } else {
                 Swal.fire({
