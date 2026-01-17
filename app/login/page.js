@@ -28,9 +28,9 @@ export default function LoginPage() {
             };
 
             if (email === demoUser.email && password === demoUser.password) {
-                Cookies.set('authToken', 'mock_token_' + Date.now(), { expires: 7 });
-                Cookies.set('userEmail', demoUser.email, { expires: 7 });
-                Cookies.set('userName', demoUser.name, { expires: 7 });
+                Cookies.set('authToken', 'mock_token_' + Date.now(), { expires: 7, path: '/' });
+                Cookies.set('userEmail', demoUser.email, { expires: 7, path: '/' });
+                Cookies.set('userName', demoUser.name, { expires: 7, path: '/' });
 
                 Swal.fire({
                     title: 'Welcome Back!',

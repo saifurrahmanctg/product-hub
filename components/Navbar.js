@@ -46,9 +46,9 @@ export default function Navbar() {
             confirmButtonText: 'Yes, Sign Out'
         }).then((result) => {
             if (result.isConfirmed) {
-                Cookies.remove('authToken');
-                Cookies.remove('userEmail');
-                Cookies.remove('userName');
+                Cookies.remove('authToken', { path: '/' });
+                Cookies.remove('userEmail', { path: '/' });
+                Cookies.remove('userName', { path: '/' });
                 setIsLoggedIn(false);
                 window.location.href = '/';
             }

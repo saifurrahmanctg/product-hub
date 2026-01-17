@@ -47,9 +47,9 @@ export default function Sidebar() {
             confirmButtonText: 'Yes, Sign Out'
         }).then((result) => {
             if (result.isConfirmed) {
-                Cookies.remove('authToken');
-                Cookies.remove('userEmail');
-                Cookies.remove('userName');
+                Cookies.remove('authToken', { path: '/' });
+                Cookies.remove('userEmail', { path: '/' });
+                Cookies.remove('userName', { path: '/' });
                 window.location.href = '/login';
             }
         });
