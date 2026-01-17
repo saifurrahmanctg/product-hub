@@ -3,9 +3,13 @@
 import { FaShoppingCart, FaHeart, FaRegHeart } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function ProductActions({ item }) {
     const [isFav, setIsFav] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -14,7 +18,31 @@ export default function ProductActions({ item }) {
         }
     }, [item.id, item._id]);
 
+    const checkAuth = () => {
+        const token = Cookies.get('authToken');
+        if (!token) {
+            Swal.fire({
+                title: 'Login Required',
+                text: 'You need to be logged in to manage your favorites and cart.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now',
+                cancelButtonText: 'Maybe later'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    router.push(`/login?callbackUrl=${pathname}`);
+                }
+            });
+            return false;
+        }
+        return true;
+    };
+
     const handleFavorite = () => {
+        if (!checkAuth()) return;
+
         const favs = JSON.parse(localStorage.getItem('favorites') || '[]');
         const exists = favs.find(f => (f.id === item.id || f._id === item._id));
         let newFavs;
@@ -44,6 +72,8 @@ export default function ProductActions({ item }) {
     };
 
     const handleAddToCart = () => {
+        if (!checkAuth()) return;
+
         const cart = JSON.parse(localStorage.getItem('cart') || '[]');
         const exists = cart.find(c => (c.id === item.id || c._id === item._id));
         let newCart;

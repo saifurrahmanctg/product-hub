@@ -6,6 +6,7 @@ import { FaSearch, FaStar, FaArrowRight, FaChevronLeft, FaChevronRight, FaChevro
 import { MdDevices, MdCheckroom, MdHome, MdAutoFixHigh, MdSportsSoccer, MdFilterList, MdShoppingCart } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
+import Cookies from 'js-cookie';
 
 export default function ProductsPageContent({ initialProducts }) {
     const [products, setItems] = useState(initialProducts || []);
@@ -26,6 +27,24 @@ export default function ProductsPageContent({ initialProducts }) {
     const toggleFavorite = (e, item) => {
         e.preventDefault();
         e.stopPropagation();
+
+        const token = Cookies.get('authToken');
+        if (!token) {
+            Swal.fire({
+                title: 'Login Required',
+                text: 'You need to be logged in to manage your favorites.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/login?callbackUrl=${window.location.pathname}`;
+                }
+            });
+            return;
+        }
 
         const currentFavs = JSON.parse(localStorage.getItem('favorites') || '[]');
         const exists = currentFavs.find(fav => fav.id === item.id);
@@ -60,6 +79,24 @@ export default function ProductsPageContent({ initialProducts }) {
     const addToCart = (e, item) => {
         e.preventDefault();
         e.stopPropagation();
+
+        const token = Cookies.get('authToken');
+        if (!token) {
+            Swal.fire({
+                title: 'Login Required',
+                text: 'You need to be logged in to add items to your cart.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/login?callbackUrl=${window.location.pathname}`;
+                }
+            });
+            return;
+        }
 
         const currentCart = JSON.parse(localStorage.getItem('cart') || '[]');
         const exists = currentCart.find(cartItem => cartItem.id === item.id);
