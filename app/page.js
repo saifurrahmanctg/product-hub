@@ -46,7 +46,7 @@ export default async function Home() {
                                 Discover, Buy, and Sell the Best Products Online.
                             </h1>
                             <p className="text-base text-[#4c669a] dark:text-gray-400 max-w-lg leading-relaxed">
-                                Join thousands of users in the most trusted modern producthub. From vintage finds to the latest tech, find what you're looking for today.
+                                Join thousands of users in the most trusted modern producthub. From vintage finds to the latest tech, find what you&apos;re looking for today.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">

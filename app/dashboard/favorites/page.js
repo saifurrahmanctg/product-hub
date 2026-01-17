@@ -75,7 +75,7 @@ export default function FavoritesPage() {
                 <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="flex flex-col gap-1">
                         <h1 className="text-2xl md:text-3xl font-black tracking-tight">My Favorites ({favorites.length})</h1>
-                        <p className="text-sm text-[#4c669a] dark:text-gray-400">Items you've saved to your wishlist</p>
+                        <p className="text-sm text-[#4c669a] dark:text-gray-400">Items you&apos;ve saved to your wishlist</p>
                     </div>
                     {favorites.length > 0 && (
                         <button

@@ -84,8 +84,8 @@ export default function OrderHistoryPage() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className={`px-3 py-1 rounded-full text-[11px] font-black tracking-wide flex items-center gap-1.5 ${order.status === 'Processing' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
-                                            order.status === 'Shipped' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400' :
-                                                'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                        order.status === 'Shipped' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400' :
+                                            'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
                                         }`}>
                                         <span className="size-1.5 rounded-full bg-current animate-pulse"></span>
                                         {order.status?.toUpperCase()}
@@ -128,7 +128,7 @@ export default function OrderHistoryPage() {
                     <div className="space-y-3">
                         <h3 className="text-2xl font-black">No orders found</h3>
                         <p className="text-[#4c669a] dark:text-gray-400 max-w-sm mx-auto leading-relaxed">
-                            It looks like you haven't placed any orders yet. Once you make a purchase, your order history will appear here.
+                            It looks like you haven&apos;t placed any orders yet. Once you make a purchase, your order history will appear here.
                         </p>
                     </div>
                     <Link href="/products" className="bg-primary text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-primary/30 active:scale-95">
