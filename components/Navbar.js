@@ -78,23 +78,21 @@ export default function Navbar() {
                         )}
                     </nav>
                     <div className="flex items-center gap-4">
-                    {
-                        isLoggedIn && (
-                        <>
-                        <Link href="/dashboard/favorites" title="Favorites" className="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors">
-                            <MdFavorite className="text-2xl" />
-                        </Link>
-                        <Link href="/cart" title="Cart" className="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors relative">
-                            <MdShoppingCart className="text-2xl" />
-                            {cartCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ring-2 ring-white dark:ring-background-dark">
-                                    {cartCount}
-                                </span>
-                            )}
-                        </Link>
-                        </>
-                        )
-                    }
+                        {isLoggedIn && (
+                            <>
+                                <Link href="/dashboard/favorites" title="Favorites" className="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors">
+                                    <MdFavorite className="text-2xl" />
+                                </Link>
+                                <Link href="/cart" title="Cart" className="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors relative">
+                                    <MdShoppingCart className="text-2xl" />
+                                    {cartCount > 0 && (
+                                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full ring-2 ring-white dark:ring-background-dark">
+                                            {cartCount}
+                                        </span>
+                                    )}
+                                </Link>
+                            </>
+                        )}
                         <ThemeToggle />
                         {isLoggedIn ? (
                             <button
