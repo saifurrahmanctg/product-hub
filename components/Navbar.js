@@ -78,6 +78,9 @@ export default function Navbar() {
                         )}
                     </nav>
                     <div className="flex items-center gap-4">
+                    {
+                        isLoggedIn && (
+                        <>
                         <Link href="/dashboard/favorites" title="Favorites" className="text-[#4c669a] dark:text-gray-400 hover:text-primary transition-colors">
                             <MdFavorite className="text-2xl" />
                         </Link>
@@ -89,6 +92,9 @@ export default function Navbar() {
                                 </span>
                             )}
                         </Link>
+                        </>
+                        )
+                    }
                         <ThemeToggle />
                         {isLoggedIn ? (
                             <button
